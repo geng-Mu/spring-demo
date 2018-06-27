@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--SpringBean的定义及其常用属性-->
+    <bean id="define" class="com.mg.spring.ioc.bean.beans.BeanDefine" scope="singleton"
+          init-method="init" destroy-method="destory" lazy-init="true">
+        <property name="scope" value="singleton"/>
+        <property name="name" value="BeanDefine"/>
+        <property name="lazyInit" value="false"/>
+        <property name="initMethod" value="init()"/>
+        <property name="destoryMethod" value="destory()"/>
+    </bean>
+
+    <!-- SpringBean的作用域:singleton,prototype -->
+    <!--延时加载:lazy-init,默认为false;当为true时,容器启动的时候不会实例化对象,而是在调用对象的时候才会实例化对象.
+    注:lazy-init的设置仅对scope为singleton的bean生效.因为当scope为prototype时,无论lazy-init为true/false,都是在调用的时候容器才会实例化对象-->
+    <bean id="singletonScope" class="com.mg.spring.ioc.bean.beans.BeanScope" scope="singleton" lazy-init="false" init-method="init"/>
+    <bean id="prototypeScope" class="com.mg.spring.ioc.bean.beans.BeanScope" scope="prototype" lazy-init="false" init-method="init"/>
+
+    <!--SpringBean的生命周期-->
+    <!--SpringBean在实例化之前会调用init-method.在销毁前会调用destory-method-->
+    <bean id="process" class="com.mg.spring.ioc.bean.beans.BeanProcess" init-method="init" destroy-method="destory"/>
+</beans>
