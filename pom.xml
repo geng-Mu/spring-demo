@@ -10,6 +10,13 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>spring-ioc</module>
+        <module>spring-beans</module>
+        <module>spring-anno</module>
+        <module>spring-aop</module>
+        <module>spring-jdbc</module>
+        <module>spring-trans</module>
+        <module>spring-mvc</module>
+        <module>spring-di</module>
     </modules>
 
     <dependencies>
@@ -17,6 +24,11 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>4.2.5.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.8</version>
         </dependency>
     </dependencies>
 

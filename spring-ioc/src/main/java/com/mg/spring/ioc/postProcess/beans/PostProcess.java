@@ -11,7 +11,7 @@ public class PostProcess implements BeanPostProcessor {
     }
 
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        System.out.println("针对所有的springBean在对象销毁的时候执行,在destory方法之前!");
+        System.out.println("针对所有的springBean在初始化结束的时候执行,在init方法之后!");
         return bean;
     }
 }

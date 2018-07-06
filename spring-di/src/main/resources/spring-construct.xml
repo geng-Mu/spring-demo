@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="constructor" class="com.mg.spring.di.constructor.beans.TestConStructorDi">
+        <constructor-arg index="0" value="测试构造器注入"/>
+        <constructor-arg index="1" ref="source"/>
+    </bean>
+
+    <bean id="source" class="com.mg.spring.di.constructor.beans.ContructorDiSource">
+        <constructor-arg type="java.lang.String" value="构造器资源"/>
+    </bean>
+</beans>
